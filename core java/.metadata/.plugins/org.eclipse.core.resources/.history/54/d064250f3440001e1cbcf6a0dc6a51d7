@@ -1,0 +1,41 @@
+package com.aurionpro.model;
+
+public class EmployeeTest {
+	public static void main(String[] args) {
+			
+			EmployeeManager man = new EmployeeManager();
+			
+//			man.getAllEmp();
+//			System.out.println("********");
+//			man.getAllFromDepartment();
+//			System.out.println("********");
+//			man.countOfEmpInEachDepartment();
+//			System.out.println("********");
+//			
+//			man.addNewEmp();
+//			System.out.println("********");
+//			man.getAllFromDepartment();
+//			System.out.println("********");
+//			man.getManagerOfEmp();
+//			System.out.println("********");
+//			man.convertToEmpObj();
+//			System.out.println("********");
+//			
+//			man.serializeData();
+//			System.out.println("********");
+//			man.loadData();
+//			System.out.println("********");
+////			man.deleteEmp();
+//			System.out.println("********");
+//			man.getAllEmp();
+//			System.out.println("********");
+//			man.sumOfAllSalaries();
+//			System.out.println("********");
+			man.Deserializeemployeesfromthefile();
+			
+		}
+
+	}
+
+
+

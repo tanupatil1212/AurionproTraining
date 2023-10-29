@@ -1,0 +1,13 @@
+package com.aurionpro.jdbc;
+
+import javax.sql.DataSource;
+
+public class AdminDbUtil {
+	private DataSource dataSource;
+
+	public AdminDbUtil(DataSource dataSource) {
+		super();
+		this.dataSource = dataSource;
+	}
+
+}

@@ -1,0 +1,154 @@
+package com.aurionpro.model;
+
+import java.util.Scanner;
+
+public class TicTacToeController {
+
+	private static Scanner scanner = new Scanner(System.in);
+	private static char[][] board = new char[3][3];
+	private static String[] playerNames = new String[2];
+	private static char currentPlayer = 'X';
+	private static List<int[]> moves = new ArrayList<>();
+
+	public static void main(String[] args) {
+		initializeBoard();
+		getPlayerNames();
+
+		while (true) {
+			displayBoard();
+			System.out.println("Current Player: " + playerNames[currentPlayer == 'X' ? 0 : 1]);
+
+			int[] move = getPlayerMove();
+			int row = move[0];
+			int col = move[1];
+
+			if (isValidMove(row, col)) {
+				makeMove(row, col);
+				moves.add(new int[] { row, col }); // Add the move to the list of moves
+
+				if (checkWin()) {
+					displayBoard();
+					System.out.println(playerNames[currentPlayer == 'X' ? 0 : 1] + " wins!");
+					if (playAgain()) {
+						initializeBoard();
+						getPlayerNames();
+						moves.clear(); // Clear the list of moves for the new game
+						continue;
+					} else {
+						break;
+					}
+				} else if (checkDraw()) {
+					displayBoard();
+					System.out.println("It's a draw!");
+					if (playAgain()) {
+						initializeBoard();
+						getPlayerNames();
+						moves.clear(); // Clear the list of moves for the new game
+						continue;
+					} else {
+						break;
+					}
+				} else {
+					switchPlayer();
+				}
+			} else {
+				System.out.println("Invalid move. Please try again.");
+			}
+		}
+		System.out.println("Thanks for playing!");
+	}
+
+	private static void initializeBoard() {
+		for (int i = 0; i < 3; i++) {
+			for (int j = 0; j < 3; j++) {
+				board[i][j] = ' ';
+			}
+		}
+		currentPlayer = 'X';
+	}
+
+	private static void getPlayerNames() {
+		System.out.print("Enter Player 1's name: ");
+		playerNames[0] = scanner.next();
+		System.out.print("Enter Player 2's name: ");
+		playerNames[1] = scanner.next();
+	}
+
+	private static void displayBoard() {
+		System.out.println("-----------------");
+		System.out.println("  Tic Tac Toe");
+		System.out.println("-----------------");
+		for (int i = 0; i < 3; i++) {
+			System.out.print("  ");
+			for (int j = 0; j < 3; j++) {
+				System.out.print(board[i][j]);
+				if (j < 2) {
+					System.out.print(" | ");
+				}
+			}
+			System.out.println();
+			if (i < 2) {
+				System.out.println("  ---------");
+			}
+		}
+		System.out.println("Moves: " + moves); // Display the list of moves
+	}
+
+	private static int[] getPlayerMove() {
+		int[] move = new int[2];
+		System.out.print("Enter your move (row and column): ");
+		move[0] = scanner.nextInt() - 1;
+		move[1] = scanner.nextInt() - 1;
+		return move;
+	}
+
+	private static boolean isValidMove(int row, int col) {
+		if (row >= 0 && row < 3 && col >= 0 && col < 3 && board[row][col] == ' ') {
+			return true;
+		}
+		return false;
+	}
+
+	private static void makeMove(int row, int col) {
+		board[row][col] = currentPlayer;
+	}
+
+	private static boolean checkWin() {
+		for (int i = 0; i < 3; i++) {
+			if (board[i][0] == currentPlayer && board[i][1] == currentPlayer && board[i][2] == currentPlayer) {
+				return true;
+			}
+			if (board[0][i] == currentPlayer && board[1][i] == currentPlayer && board[2][i] == currentPlayer) {
+				return true;
+			}
+		}
+		if (board[0][0] == currentPlayer && board[1][1] == currentPlayer && board[2][2] == currentPlayer) {
+			return true;
+		}
+		if (board[0][2] == currentPlayer && board[1][1] == currentPlayer && board[2][0] == currentPlayer) {
+			return true;
+		}
+		return false;
+	}
+
+	private static boolean checkDraw() {
+		for (int i = 0; i < 3; i++) {
+			for (int j = 0; j < 3; j++) {
+				if (board[i][j] == ' ') {
+					return false;
+				}
+			}
+		}
+		return true;
+	}
+
+	private static void switchPlayer() {
+		currentPlayer = (currentPlayer == 'X') ? 'O' : 'X';
+	}
+
+	private static boolean playAgain() {
+		System.out.print("Do you want to play again? (yes/no): ");
+		String response = scanner.next().toLowerCase();
+		return response.equals("yes");
+	}
+}

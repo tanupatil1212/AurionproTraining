@@ -1,0 +1,14 @@
+package com.aurionpro.dao;
+
+import com.aurionpro.entity.Student;
+
+public interface StudentDao {
+
+	
+	public void saveStudent(Student student);
+
+	public static Student findStudentById(Student student) {
+		// TODO Auto-generated method stub
+		public Student findStudentById(int id);
+	}
+}

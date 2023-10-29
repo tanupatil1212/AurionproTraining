@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;com.aurionpro.test.UncheckedException&apos; to &apos;checkedException&apos;&#x0D;&#x0A;- Original project: &apos;27-Exception-propagation-CHecked&apos;&#x0D;&#x0A;- Original element: &apos;com.aurionpro.test.UncheckedException&apos;&#x0D;&#x0A;- Renamed element: &apos;com.aurionpro.test.checkedException&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;UncheckedException&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;com.aurionpro.test{UncheckedException.java[UncheckedException" matchStrategy="1" name="checkedException" qualified="false" references="true" similarDeclarations="false" stamp="1689923238751" textual="false" version="1.0"/>
+</session>

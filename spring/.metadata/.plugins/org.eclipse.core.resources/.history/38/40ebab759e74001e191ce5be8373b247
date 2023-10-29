@@ -1,0 +1,26 @@
+package com.aurionpro.service;
+
+import java.util.List;
+
+import com.aurionpro.entity.Student;
+import com.aurionpro.exception.StudentNotFoundException;
+
+public interface StudentService {
+	
+	List<Student> findAll();
+
+	Student findById(int studentId) throws StudentNotFoundException;
+
+//	Student saveStudent(Student student);
+//
+//	Student updateStudent(Student student);
+//
+//	void deleteStudentById(int studentId);
+//
+//	Student findStudentById(int studentId);
+
+	Student save(Student student);
+
+	void deleteById(int studentId) throws StudentNotFoundException;
+
+}

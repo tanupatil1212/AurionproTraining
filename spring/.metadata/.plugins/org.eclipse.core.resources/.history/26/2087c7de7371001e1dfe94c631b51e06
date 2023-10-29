@@ -1,0 +1,30 @@
+package com.aurionpro.dao;
+
+import org.springframework.stereotype.Repository;
+
+import com.aurionpro.entity.Student;
+
+import jakarta.persistence.EntityManager;
+import jakarta.transaction.Transactional;
+@Repository
+public class StudentDaoImpl implements StudentDao {
+	
+	private EntityManager manager;
+	
+	
+
+	public StudentDaoImpl(EntityManager manager) {
+		super();
+		this.manager = manager;
+	}
+
+
+	@Transactional
+	@Override
+	public void saveStudent(Student student) {
+		manager.persist(student);
+		
+	}
+	
+
+}

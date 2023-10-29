@@ -1,0 +1,74 @@
+package com.aurionpro.model;
+
+import static org.junit.jupiter.api.Assertions.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
+
+import org.junit.jupiter.api.Test;
+
+class MathUtilTest {
+
+	// @Test
+		// void test() {
+		// //fail("Not yet implemented");
+		// }
+
+		@Test
+		void testAddNumbers() {
+			MathUtil util = new MathUtil();
+			double addResult = util.addNumbers(10, 20);
+			// assertEquals(30, ad);
+			assertTrue(30 == addResult);
+			System.out.println("Hello");
+		}
+
+		// MathUtil util = new MathUtil();
+		// @Test
+		// public void testFactorial() {
+		// // Test cases for factorial
+		// assertEquals(1, util.calculateFactorial(0)); // 0! = 1
+		// assertEquals(1, util.calculateFactorial(1)); // 1! = 1
+		// assertEquals(2, util.calculateFactorial(2)); // 2! = 2
+		// assertEquals(6, util.calculateFactorial(3)); // 3! = 6
+		// assertEquals(24, util.calculateFactorial(4)); // 4! = 24
+		// assertEquals(120,util.calculateFactorial(5));// 5! = 120
+		// // Add more test cases as needed
+		// }
+
+		@Test
+
+		void testArrays() {
+
+			int[] numbersl = { 10, 20, 30, 40, 50 };
+
+			int[] numbers2 = { 30, 30, 40, 50, 60 };
+
+			MathUtil util = new MathUtil();
+
+			assertArrayEquals(numbers2, util.addTenToArray(numbersl));
+		}
+		
+		@Test
+		void testDivideNumbers_checkResult() {
+			MathUtil util = new MathUtil();
+			assertEquals(2, util.divideNumbers(10, 5));
+		}
+		
+		@Test
+		void testDivideNumbers_checkException() {
+			MathUtil util = new MathUtil();
+			assertThrows(NullPointerException.class, ()->util.divideNumbers(10, 0));
+		}
+		
+		@Test
+		void testDivideNumbers_checkMultipleResults() {
+			MathUtil util = new MathUtil();
+			
+			assertAll(()->assertEquals(2, util.divideNumbers(10, 5)),
+					()->assertEquals(2, util.divideNumbers(10, 2)),
+					()->assertEquals(2, util.divideNumbers(10, 10)),
+					()->assertEquals(2, util.divideNumbers(10, 1)));
+		}
+}

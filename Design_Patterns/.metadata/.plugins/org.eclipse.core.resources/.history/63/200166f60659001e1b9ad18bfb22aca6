@@ -1,0 +1,13 @@
+package com.aurionpro.model;
+
+public class Shape {
+	protected IColor color;
+
+	public Shape(IColor color) {
+		super();
+		this.color = color;
+	}
+	
+	abstract public void useColor();
+
+}

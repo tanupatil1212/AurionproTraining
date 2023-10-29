@@ -1,0 +1,83 @@
+package com.aurionpro.model;
+
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.util.ArrayList;
+import java.util.List;
+
+public class EmployeeManager {
+	private static final String filepath = "D:\\Aurionpro\\core java\\29_Test_02\\emp.txt";
+	  private List<Employee> employees;
+	  
+	  
+	  
+	  
+	  public EmployeeManager() {
+		  employees = new ArrayList<>();
+		    loadEmployees();
+		  }
+
+		  public void addEmployee(Employee employee) {
+			  employees.add(employee);
+		    saveEmployees();
+		  }
+
+		  public void clearEmployee() {
+			  employees.clear();
+		    saveEmployees();
+		  }
+
+		  public List<Employee> getEmployee() {
+		    return employees;
+		  }
+
+		
+		  public void loadEmployees() {
+		    try {
+		      FileInputStream fileInputStream = new FileInputStream(filepath);
+		      ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream);
+		      employees = (List<Employee>) objectInputStream.readObject();
+		      objectInputStream.close();
+		    } catch (FileNotFoundException e) {
+		      System.out.println("File not found: " + filepath);
+		    } catch (IOException e) {
+		      System.out.println("Error reading file: " + filepath);
+		    } catch (ClassNotFoundException e) {
+		      System.out.println("Class not found: " + filepath);
+		    }
+		  }
+
+		  public void saveEmployees() {
+		    try {
+		      FileOutputStream fileOutputStream = new FileOutputStream(filepath);
+		      ObjectOutputStream objectOutputStream = new ObjectOutputStream(fileOutputStream);
+		      objectOutputStream.writeObject(employees);
+		      objectOutputStream.close();
+		    } catch (FileNotFoundException e) {
+		      System.out.println("File not found: " + filepath);
+		    } catch (IOException e) {
+		      System.out.println("Error writing file: " + filepath);
+		    }
+		  }
+		  
+		  public void deleteEmployee(int ID) {
+				for (Employee employee : employees) {
+					if (employee.getId() == ID) {
+						employees.remove(employee);
+						break;
+					}
+				}
+
+			}
+
+		  public void deleteAllEmployees() {
+			  employees.clear();
+		    saveEmployees();
+		  }
+	
+
+}

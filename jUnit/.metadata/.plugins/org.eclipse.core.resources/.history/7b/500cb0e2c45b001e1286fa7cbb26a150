@@ -1,0 +1,55 @@
+package com.aurionpro.model;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+
+class GameTest {
+
+	// @Test
+	// void test() {
+	// fail("Not yet implemented");
+	// }
+
+	private Player player1;
+	private Player player2;
+	private Game game;
+
+	@BeforeEach
+	public void setUp() {
+		// Initialize players and the game before each test
+		player1 = new Player("Player 1", MarkType.X);
+		player2 = new Player("Player 2", MarkType.O);
+		game = new Game(player1, player2);
+	}
+
+	@Test
+	public void testInitialCurrentPlayer() {
+		// Ensure that the initial current player is player1
+		assertEquals(player1, game.getCurrentPlayer());
+	}
+
+	@Test
+	public void testSwitchPlayer() {
+		// Make moves to switch players
+		game.makeMove(0, 3);
+		assertEquals(player2, game.getCurrentPlayer());
+		game.makeMove(0, 1);
+		assertEquals(player1, game.getCurrentPlayer());
+	}
+
+	@Test
+	public void testMakeValidMove() {
+		// Make a valid move and check if it's successful
+		assertTrue(game.makeMove(0, 0));
+	}
+
+	@Test
+	public void testMakeInvalidMove() {
+		// Make an invalid move and check if it's unsuccessful
+		assertFalse(game.makeMove(1, 2));
+		assertTrue(game.makeMove(0, 1));
+	}
+
+}

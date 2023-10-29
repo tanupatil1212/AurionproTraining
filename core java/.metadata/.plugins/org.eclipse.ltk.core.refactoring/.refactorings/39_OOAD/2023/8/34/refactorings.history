@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;com.aurionpro.model.LineItems&apos; to &apos;LineItem&apos;&#x0D;&#x0A;- Original project: &apos;39_OOAD&apos;&#x0D;&#x0A;- Original element: &apos;com.aurionpro.model.LineItems&apos;&#x0D;&#x0A;- Renamed element: &apos;com.aurionpro.model.LineItem&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;LineItems&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;com.aurionpro.model{LineItems.java[LineItems" matchStrategy="1" name="LineItem" qualified="false" references="true" similarDeclarations="false" stamp="1692940731507" textual="false" version="1.0"/>
+</session>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+		<item value="D:\Aurionpro\J2EE\09-bank-demo.zip"/>
+		<item value="D:\Aurionpro\J2EE\09-bank-demo-app\09-bank-demo-app"/>
+		<item value="C:\Users\tanuja.patil\Downloads\09-bank-appl"/>
+		<item value="C:\Users\tanuja.patil\Downloads\09-bank-app\09-bank-appl"/>
+		<item value="D:\Aurionpro\J2EE\09-bank-demo"/>
+		<item value="D:\Aurionpro\J2EE\09-bank-demo-app"/>
+		<item value="D:\Aurionpro\J2EE\09-bank-demo\09-bank-demo"/>
+		<item value="D:\Aurionpro\J2EE\05-beer-selection2"/>
+		<item value="C:\Users\tanuja.patil\Downloads\05-beer-selection2"/>
+		<item value="D:\Aurionpro\J2EE\05-Beer-Selection"/>
+		<item value="D:\Aurionpro\J2EE\07-beerApp"/>
+	</list>
+</section>

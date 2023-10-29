@@ -1,0 +1,25 @@
+package com.aurionpro.model;
+
+public class EmployeeTest {
+	public static void main(String[] args) {
+			
+			EmployeeManager man = new EmployeeManager();
+			
+			man.getAllEmp();
+			man.getAllFromDepartment();
+			man.countOfEmpInEachDepartment();
+			man.addNewEmp();
+			man.getAllFromDepartment();
+			man.getManagerOfEmp();
+			man.convertToEmpObj();
+			man.serializeData();
+			man.loadData();
+			man.deleteEmp();
+			man.getAllEmp();
+			man.sumOfAllSalaries();
+		}
+
+	}
+
+
+

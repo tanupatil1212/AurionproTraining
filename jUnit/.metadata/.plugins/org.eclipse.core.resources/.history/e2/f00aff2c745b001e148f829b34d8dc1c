@@ -1,0 +1,42 @@
+package com.aurionpro.model;
+
+public class Board {
+
+	private Cell[][] cells;
+	private final int numRows = 3;
+	private final int numCols = 3;
+
+	public Board() {
+		cells = new Cell[numRows][numCols];
+		for (int row = 0; row < numRows; row++) {
+			for (int col = 0; col < numCols; col++) {
+				cells[row][col] = new Cell();
+			}
+		}
+	}
+
+	public Cell getCell(int row, int col) {
+		return cells[row][col];
+	}
+
+	// You can add more methods as needed to interact with the board
+	public boolean isFull() {
+		for (int row = 0; row < numRows; row++) {
+			for (int col = 0; col < numCols; col++) {
+				if (cells[row][col].isEmpty()) {
+					return false;
+				}
+			}
+		}
+		return true;
+	}
+
+	public void clear() {
+		for (int row = 0; row < numRows; row++) {
+			for (int col = 0; col < numCols; col++) {
+				cells[row][col].clear();
+			}
+		}
+	}
+
+}

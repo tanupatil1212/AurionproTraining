@@ -1,0 +1,33 @@
+package myPackage;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.Statement;
+
+public class Student {
+	public void createDatabase() {
+	
+	
+	
+	}
+
+	public void createTable() {
+		
+		try {
+			String url ="jdbc:mysql://localhost:3306/DB";
+			
+			String userName="root";
+			String password="Root@123";
+			
+			
+			Connection conn = DriverManager.getConnection(url,userName,password);
+			Statement stm = conn.createStatement();
+			String query = "create table student(sid int(3), sname varchar(200), semail varchar(200))";
+			stm.execute(query);
+			System.out.println("Table created successfully");
+			conn.close();
+		}catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+}

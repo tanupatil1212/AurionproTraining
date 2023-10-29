@@ -1,0 +1,30 @@
+package com.aurionpro.model;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+
+class StringUtilTest {
+
+//	@Test
+//	void test() {
+//		fail("Not yet implemented");
+//	}
+
+	@Test
+	void testString() {
+		StringUtil util = new StringUtil();
+		System.out.println("Removing First Two Letters :");
+		System.out.println(util.truncateInFirst2Positions("AASD SD"));
+		System.out.println(util.truncateInFirst2Positions("ASD SD"));
+		System.out.println(util.truncateInFirst2Positions("SDwe SDwe"));
+		System.out.println(util.truncateInFirst2Positions("SADE SDE"));
+
+		System.out.println("First and Last Characters Same : ");
+		System.out.println(util.areFirstAndLastTwoCharactersTheSame("ASA"));
+		System.out.println(util.areFirstAndLastTwoCharactersTheSame("ASDSA"));
+		System.out.println(util.areFirstAndLastTwoCharactersTheSame("ASDAS"));
+
+	}
+}

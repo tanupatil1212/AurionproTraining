@@ -1,0 +1,100 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>Banking Application</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+        }
+
+        .container {
+            margin: 100px auto;
+            max-width: 300px;
+            background: #fff;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-group {
+            margin: 10px 0;
+            text-align: left;
+        }
+
+        label {
+            display: block;
+        }
+
+        select, input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        select {
+            margin-top: 5px;
+        }
+
+        button {
+            width: 100%;
+            background: #007BFF;
+            color: #fff;
+            border: none;
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h2>Banking Application</h2>
+    <form action="AdminController" method="post" onsubmit="return validateLogin();">
+        <div class="form-group">
+            <label for="userType">Select User Type:</label>
+            <select id="userType" name="userType">
+                <option value="user">User</option>
+                <option value="admin">Admin</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+        </div>
+        <div class="form-group">
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+        </div>
+        <button type="submit">Login</button>
+    </form>
+    <script>
+        // JavaScript function to validate user login
+        function validateLogin() {
+            var userType = document.getElementById("userType").value;
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+
+            // Check user type and display an alert for incorrect login
+            if (userType === "user" && (username !== "validUser" || password !== "userPassword")) {
+                alert("Incorrect username or password for User.");
+                return false; // Prevent form submission
+            } else if (userType === "admin" && (username !== "validAdmin" || password !== "adminPassword")) {
+                alert("Incorrect username or password for Admin.");
+                return false; // Prevent form submission
+            }
+
+            // If everything is valid, allow form submission
+            return true;
+        }
+    </script>
+</div>
+</body>
+</html>

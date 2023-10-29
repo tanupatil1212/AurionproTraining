@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;com.Aurionpro.test.SecondPass&apos; to &apos;SecondPassByvalue&apos;&#x0D;&#x0A;- Original project: &apos;03-Passbyvalue&apos;&#x0D;&#x0A;- Original element: &apos;com.Aurionpro.test.SecondPass&apos;&#x0D;&#x0A;- Renamed element: &apos;com.Aurionpro.test.SecondPassByvalue&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;SecondPass&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;com.Aurionpro.test{SecondPass.java[SecondPass" matchStrategy="1" name="SecondPassByvalue" qualified="false" references="true" similarDeclarations="false" stamp="1692119613796" textual="false" version="1.0"/>
+</session>

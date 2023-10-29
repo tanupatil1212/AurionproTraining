@@ -1,0 +1,64 @@
+package com.aurionpro.model;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+
+class StringUtilTest {
+
+	@Test
+	void test() {
+		fail("Not yet implemented");
+	}
+	
+private StringUtil stringUtil;
+    
+    @BeforeEach
+    void setUp() {
+        stringUtil = new StringUtil();
+    }
+
+    @Test
+    void testTruncateInFirst2Position() {
+        // Test when the input string has more than 2 characters
+        assertEquals("AB", stringUtil.trancateInFirst2Position("ABCDE"));
+        
+        // Test when the input string has 2 characters
+        assertEquals("AB", stringUtil.trancateInFirst2Position("AB"));
+        
+        // Test when the input string is null
+        assertNull(stringUtil.trancateInFirst2Position(null));
+        
+        // Test when the input string is empty
+        assertEquals("", stringUtil.trancateInFirst2Position(""));
+        
+        // Test when the input string has less than 2 characters
+        assertEquals("A", stringUtil.trancateInFirst2Position("A"));
+    }
+
+    @Test
+    void testAreFirstAndLastTwoCharactersTheSame() {
+        // Test when the input string has more than 3 characters
+        assertTrue(stringUtil.areFirstAndLastTwoCharactersTheSame("ABCDAB"));
+        
+        // Test when the input string has 4 characters and the first and last two are different
+        assertFalse(stringUtil.areFirstAndLastTwoCharactersTheSame("ABCDXY"));
+        
+        // Test when the input string has 3 characters
+        assertTrue(stringUtil.areFirstAndLastTwoCharactersTheSame("ABA"));
+        
+        // Test when the input string has 2 characters
+        assertTrue(stringUtil.areFirstAndLastTwoCharactersTheSame("AA"));
+        
+        // Test when the input string has 1 character
+        assertFalse(stringUtil.areFirstAndLastTwoCharactersTheSame("A"));
+        
+        // Test when the input string is null
+        assertFalse(stringUtil.areFirstAndLastTwoCharactersTheSame(null));
+        
+        // Test when the input string is empty
+        assertFalse(stringUtil.areFirstAndLastTwoCharactersTheSame(""));
+    }
+
+}

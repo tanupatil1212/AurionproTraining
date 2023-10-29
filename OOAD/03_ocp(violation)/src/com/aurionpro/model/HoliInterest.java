@@ -1,0 +1,10 @@
+package com.aurionpro.model;
+
+public class HoliInterest implements IFestivalInterest {
+
+	public double getInterestRate() {
+		// TODO Auto-generated method stub
+		return 7.5;
+	}
+
+}

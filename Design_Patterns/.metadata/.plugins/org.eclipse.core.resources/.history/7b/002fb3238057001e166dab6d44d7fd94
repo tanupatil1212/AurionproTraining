@@ -1,0 +1,10 @@
+package com.aurionpro.model;
+
+public class RealInternet {
+	
+	@Override
+	public void connectTo(String server) {
+		System.out.println("Connecting to "+server);
+	}
+
+}

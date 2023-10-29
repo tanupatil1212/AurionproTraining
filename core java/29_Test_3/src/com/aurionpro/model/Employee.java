@@ -1,0 +1,101 @@
+package com.aurionpro.model;
+
+import java.io.Serializable;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.time.format.FormatStyle;
+
+public class Employee implements Serializable {
+	private int id;
+	private String name;
+	private String desgination;
+	private int MangagerID;
+	private LocalDate DOB;
+	private double increment;
+	private Object commision;
+	private int departmentID;
+
+	public Employee(int id, String name, String desgination, int mangagerID, LocalDate dOB, double increment,
+			Object commision, int departmentID) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.desgination = desgination;
+		MangagerID = mangagerID;
+		DOB = dOB;
+		this.increment = increment;
+		this.commision = commision;
+		this.departmentID = departmentID;
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getDesgination() {
+		return desgination;
+	}
+
+	public void setDesgination(String desgination) {
+		this.desgination = desgination;
+	}
+
+	public int getMangagerID() {
+		return MangagerID;
+	}
+
+	public void setMangagerID(int mangagerID) {
+		MangagerID = mangagerID;
+	}
+
+	public void setDOB(LocalDate dOB) {
+		this.DOB = dOB;
+	}
+
+	public String formatDate(LocalDate date) {
+		return date.format(DateTimeFormatter.ofLocalizedDate(FormatStyle.FULL));
+	}
+
+	public double getIncrement() {
+		return increment;
+	}
+
+	public void setIncrement(double increment) {
+		this.increment = increment;
+	}
+
+	public Object getCommision() {
+		return commision;
+	}
+
+	public void setCommision(Object commision) {
+		this.commision = commision;
+	}
+
+	public int getDepartmentID() {
+		return departmentID;
+	}
+
+	public void setDepartmentID(int departmentID) {
+		this.departmentID = departmentID;
+	}
+
+	@Override
+	public String toString() {
+		return "Employee [id=" + id + ", name=" + name + ", desgination=" + desgination + ", MangagerID=" + MangagerID
+				+ ", increment=" + increment + ", commision=" + commision + ", departmentID=" + departmentID + "]";
+	}
+
+}

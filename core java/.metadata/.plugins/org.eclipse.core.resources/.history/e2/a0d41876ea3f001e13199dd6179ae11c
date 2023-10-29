@@ -1,0 +1,10 @@
+package com.aurionpro.model;
+
+import java.util.List;
+
+public class EmployeeManager {
+	private static final String filepath = "D:\\Aurionpro\\core java\\29_Test_02\\emp.txt";
+	  private List<Employee> employees;
+	
+
+}

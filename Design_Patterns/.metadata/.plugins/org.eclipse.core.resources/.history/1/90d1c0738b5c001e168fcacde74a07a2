@@ -1,0 +1,25 @@
+package com.aurionpro.test;
+
+import com.aurionpro.model.Biscuit;
+import com.aurionpro.model.Hat;
+import com.aurionpro.model.HatAdapter;
+import com.aurionpro.model.IItems;
+import com.aurionpro.model.ShoppingCart;
+
+public class AdapterTest {
+
+    public static void main(String[] args) {
+    	ShoppingCart cart=new ShoppingCart();
+    	  Hat hat=new Hat("hh","Haaattt", 500, 5);
+    	  IItems hatAdapter=new HatAdapter(hat);
+    	  IItems marie=new Biscuit("mariegold",20);
+    	  cart.addItemToCart(hatAdapter);
+    	  cart.addItemToCart(marie);
+    	  
+    	  System.out.println(cart.getCartPrice());
+    	  System.out.println(cart.getCartItems());
+    	  
+
+       
+    }
+}

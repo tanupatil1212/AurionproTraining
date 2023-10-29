@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;com.aurinpro.model.AccountGender&apos; to &apos;Gender&apos;&#x0D;&#x0A;- Original project: &apos;33-Account_Stream&apos;&#x0D;&#x0A;- Original element: &apos;com.aurinpro.model.AccountGender&apos;&#x0D;&#x0A;- Renamed element: &apos;com.aurinpro.model.Gender&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;AccountGender&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;com.aurinpro.model{AccountGender.java[AccountGender" matchStrategy="1" name="Gender" qualified="false" references="true" similarDeclarations="false" stamp="1692105716771" textual="false" version="1.0"/>
+</session>

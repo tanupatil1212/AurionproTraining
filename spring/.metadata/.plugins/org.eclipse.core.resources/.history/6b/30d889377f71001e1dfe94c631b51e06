@@ -1,0 +1,68 @@
+package com.aurionpro;
+
+import java.util.List;
+
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+import com.aurionpro.dao.StudentDao;
+import com.aurionpro.entity.Student;
+
+@SpringBootApplication
+public class Application implements CommandLineRunner{
+private StudentDao studentDao;
+	
+	public Application(StudentDao studentdao) {
+		super();
+		this.studentDao = studentdao;
+	}
+	public static void main(String[] args) {
+		SpringApplication.run(Application.class, args);
+	}
+	@Override
+	public void run(String... args) throws Exception{
+		
+//		addNewStudent();
+//		findStudentById();
+//		findAllStudents();
+//		deleteStudentById();
+		findStudentByFirstName();
+		
+		
+	}
+	private void findStudentByFirstName() {
+		String firstName="tanuja";
+		List<Student> students=studentDao.findStudentById(firstName);
+		
+		
+	}
+	private void deleteStudentById() {
+		int id = 1;
+		studentDao.deleteStudentById(id);
+		
+	}
+	private void findAllStudents() {
+		List <Student> students = studentDao.findAll();
+		System.out.println(students);
+		
+	}
+	private void findStudentById() {
+		int id=1;
+		Student student = studentDao.findStudentById(id);
+		if(student!=null) {
+			System.out.println(student);
+			
+		}else {
+			System.out.println("Student with"+id+"not found");
+		}
+		
+		
+	}
+	private void addNewStudent() {
+		Student student = new Student("Bhavika","Rajput","bhavikaraj@gmail.com");
+		studentDao.saveStudent(student);
+		System.out.println("Student Save Successfully");
+	}
+
+}

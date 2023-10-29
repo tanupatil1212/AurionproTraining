@@ -1,0 +1,59 @@
+package com.aurionpro.model;
+
+public class Game {
+
+	 private Board board;
+	    private Player[] players;
+	    private int currentPlayerIndex;
+	    private ResultAnalyzer resultAnalyzer;
+
+	    public Game(Player player1, Player player2) {
+	        board = new Board();
+	        players = new Player[]{player1, player2};
+	        currentPlayerIndex = 0; // Player 1 starts
+	        resultAnalyzer = new ResultAnalyzer(board);
+	    }
+
+	    public Player getCurrentPlayer() {
+	        return players[currentPlayerIndex];
+	    }
+
+	    public ResultType getResult() {
+	        return resultAnalyzer.getResult();
+	    }
+
+	    public boolean makeMove(int row, int col) {
+	        try {
+	            if (isValidMove(row, col)) {
+	                board.getCell(row, col).setMark(getCurrentPlayer().getMark());
+	                resultAnalyzer.analyzeResult();
+	                switchPlayer();
+	                return true;
+	            } else {
+	                System.err.println("Invalid move: The move at (" + row + ", " + col + ") is not valid.");
+	                return false;
+	            }
+	        } catch (CellAlreadyMarkedException e) {
+	            System.err.println("Invalid move: The cell at (" + row + ", " + col + ") is already marked.");
+	            return false;
+	        }
+	    }
+
+	    private boolean isValidMove(int row, int col) {
+	        if (row >= 0 && row < 3 && col >= 0 && col < 3) {
+	            Cell cell = board.getCell(row, col);
+	            return cell.isEmpty();
+	        }
+	        return false;
+	    }
+
+	    private void switchPlayer() {
+	        currentPlayerIndex = (currentPlayerIndex + 1) % players.length;
+	    }
+
+	    // Add a method to check if the game is over (win or draw)
+	    public boolean isGameOver() {
+	        return getResult() != ResultType.IN_PROGRESS;
+	    }
+
+}

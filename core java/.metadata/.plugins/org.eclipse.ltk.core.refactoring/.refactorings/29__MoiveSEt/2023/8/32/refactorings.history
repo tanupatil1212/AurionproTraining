@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;com.aurionpro.test.MovieManger&apos; to &apos;MovieTest&apos;&#x0D;&#x0A;- Original project: &apos;29__MoiveSEt&apos;&#x0D;&#x0A;- Original element: &apos;com.aurionpro.test.MovieManger&apos;&#x0D;&#x0A;- Renamed element: &apos;com.aurionpro.test.MovieTest&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;MovieManger&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;com.aurionpro.test{MovieManger.java[MovieManger" matchStrategy="1" name="MovieTest" qualified="false" references="true" similarDeclarations="false" stamp="1691562110100" textual="false" version="1.0"/>
+</session>

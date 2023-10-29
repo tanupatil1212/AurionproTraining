@@ -1,0 +1,56 @@
+package com.aurionpro.model;
+
+public class Game {
+
+	private Board board;
+    private MarkType currentPlayer;
+    private ResultAnalyzer resultAnalyzer;
+
+    public Game() {
+        board = new Board();
+        currentPlayer = MarkType.X;
+        resultAnalyzer = new ResultAnalyzer(board);
+    }
+
+    public MarkType getCurrentPlayer() {
+        return currentPlayer;
+    }
+
+    public ResultType getResult() {
+        return resultAnalyzer.getResult();
+    }
+
+    private boolean isValidMove(int row, int col) {
+        if (row >= 0 && row < 3 && col >= 0 && col < 3) {
+            Cell cell = board.getCell(row, col);
+            return cell.isEmpty();
+        }
+        return false;
+    }
+
+    public boolean makeMove(int row, int col) {
+        try {
+            if (isValidMove(row, col)) {
+                board.getCell(row, col).setMark(currentPlayer);
+                resultAnalyzer.analyzeResult();
+                switchPlayer();
+                return true;
+            } else {
+                System.err.println("Invalid move: The move at (" + row + ", " + col + ") is not valid.");
+                return false;
+            }
+        } catch (CellAlreadyMarkedException e) {
+            System.err.println("Invalid move: The cell at (" + row + ", " + col + ") is already marked.");
+            return false;
+        }
+    }
+
+    private void switchPlayer() {
+        if (currentPlayer == MarkType.X) {
+            currentPlayer = MarkType.O;
+        } else {
+            currentPlayer = MarkType.X;
+        }
+    }
+
+}

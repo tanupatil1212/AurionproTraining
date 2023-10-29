@@ -1,0 +1,39 @@
+package com.aurionpro.model;
+
+public class ResultAnalyzer {
+	
+	private Board board;
+    private ResultType result;
+
+    public ResultAnalyzer(Board board) {
+        this.board = board;
+        this.result = ResultType.PROGRESS;
+    }
+
+    public void analyzeResult() {
+        if (checkWin(MarkType.X) || checkWin(MarkType.O)) {
+            result = ResultType.WIN;
+        } else if (checkDraw()) {
+            result = ResultType.DRAW;
+        } else {
+            result = ResultType.PROGRESS;
+        }
+    }
+
+    public ResultType getResult() {
+        return result;
+    }
+
+    private boolean checkWin(MarkType player) {
+        // Implement win checking logic for the specified player
+        // You can use the existing logic from your Game class here
+        return false;
+    }
+
+    private boolean checkDraw() {
+        // Implement draw checking logic
+        // You can use the existing logic from your Game class here
+        return false;
+    }
+
+}

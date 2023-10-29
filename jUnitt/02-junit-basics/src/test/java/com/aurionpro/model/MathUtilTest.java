@@ -1,0 +1,22 @@
+package com.aurionpro.model;
+
+
+import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.Test;
+
+class MathUtilTest {
+
+	@Test
+	void test() {
+//		fail("Not yet implemented");
+	}
+	
+	void testAddNumbers() {
+		MathUtil util = new MathUtil();
+		double addResult = util.addNumber(10, 20);
+		assertEquals(30,addResult);
+		
+	}
+
+}

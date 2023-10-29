@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;com.aurionpro.model.DepositeType&apos; to &apos;FestivalType&apos;&#x0D;&#x0A;- Original project: &apos;03_ocp(violation)&apos;&#x0D;&#x0A;- Original element: &apos;com.aurionpro.model.DepositeType&apos;&#x0D;&#x0A;- Renamed element: &apos;com.aurionpro.model.FestivalType&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;DepositeType&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;com.aurionpro.model{DepositeType.java[DepositeType" matchStrategy="1" name="FestivalType" qualified="false" references="true" similarDeclarations="false" stamp="1692978568074" textual="false" version="1.0"/>
+</session>

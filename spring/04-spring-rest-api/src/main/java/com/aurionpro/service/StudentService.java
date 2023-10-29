@@ -1,0 +1,19 @@
+package com.aurionpro.service;
+
+import java.util.List;
+
+import com.aurionpro.entity.Student;
+
+public interface StudentService {
+	
+	List<Student> findAll();
+
+	Student findById(int studentId);
+
+	Student saveStudent(Student student);
+
+	Student updateStudent(Student student);
+//
+//	void deleteStudentById(int studentId);
+
+}

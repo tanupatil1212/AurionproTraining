@@ -1,0 +1,55 @@
+package com.aurionpro.model;
+
+import java.util.List;
+import java.util.Scanner;
+import com.aurionpro.model.Employee;
+
+public class EmplyeeController {
+	
+	    private EmployeeManager employeeManager;
+
+	    public EmplyeeController() {
+	        employeeManager = new EmployeeManager();
+	    }
+
+	    public void start() {
+	        displayMenu();
+	    }
+
+	    public void displayMenu() {
+	        Scanner scanner = new Scanner(System.in);
+	        int choice;
+	        do {
+	           
+
+	            switch (choice) {
+	                case 1:
+	                    Employee newEmployee = setEmployeeDetails();
+	                    employeeManager.addEmployee(newEmployee);
+	                    System.out.println("Employee added Successfully");
+	                    break;
+	               
+	            }
+	            
+	        } while (choice != 5);
+	    }
+
+	    private Employee setEmployeeDetails() {
+	        
+	        return null; 
+	    }
+	
+	
+
+
+
+
+	public void start1() {
+		// TODO Auto-generated method stub
+		
+	} 
+
+	
+	
+
+}

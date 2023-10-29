@@ -1,0 +1,77 @@
+package myPackage;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.Statement;
+
+public class Student {
+	public void createDatabase() {
+//		
+//		try {
+//			  String url = "jdbc:mysql://localhost:3306/"; 
+//			  String username = "root";
+//			  String password = "root@123";
+//			//  
+//
+//			  Connection conn = DriverManager.getConnection(url, username, password);
+//			  Statement stmt = conn.createStatement();// stmt create
+//			  
+//			//  System.out.println("Connected Successfully");
+//			  String query = "Create Database TechCode";// execute query
+//			  stmt.execute(query);
+//			  System.out.println("Table Created Successfully");
+//			  conn.close();
+//			  
+//			 } catch (Exception e) {
+//			  e.printStackTrace();
+//			 }
+	
+	
+	
+	}
+
+	public void createTable() {
+		
+		//try {
+		//   String url = "jdbc:mysql://localhost:3306/TechCode"; 
+		////   String db = "TechCode";   
+		//   String username = "root";
+		//   String password = "root@123";
+		////   
+		//
+		//   Connection conn = DriverManager.getConnection(url, username, password);
+////		      Connection conn = DriverManager.getConnection(url+db, username, password);
+		//   Statement stmt = conn.createStatement();// stmt create
+		//   
+		////  System.out.println("Connected Successfully");
+		//   String query = "create table student (sid int(50), sname varchar(200), semail varchar(200)";// execute query
+		//   stmt.execute(query);
+		//   System.out.println("Table Created Successfully");
+		//   conn.close();
+		//   
+		//  } catch (Exception e) {
+		//   e.printStackTrace();
+		//  }
+		
+	}
+
+	public void createData() {
+		try {
+			String url ="jdbc:mysql://localhost:3306/";
+			String db="DB";
+			String userName="root";
+			String password="Root@123";
+			
+			
+			Connection conn = DriverManager.getConnection(url+db,userName,password);
+			Statement stm = conn.createStatement();
+			String query = "INSERT into student (sid, sname, semail) VALUES (1, 'tanuja', 'tanuja@gmail.com')";
+			stm.execute(query);
+			System.out.println("data inserted successfully");
+			conn.close();
+		}catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+	}
+}

@@ -1,0 +1,103 @@
+package com.aurionpro.model;
+
+public class Game {
+
+	private Board board;
+	private MarkType currentPlayer;
+	private ResultType result;
+
+	public Game() {
+		board = new Board();
+		currentPlayer = MarkType.X;
+		result = ResultType.PROGRESS;
+	}
+
+	public MarkType getCurrentPlayer() {
+		return currentPlayer;
+	}
+
+	public ResultType getResult() {
+		return result;
+	}
+
+	public boolean makeMove(int row, int col) throws CellAlreadyMarkedException {
+	    if (row >= 0 && row < 3 && col >= 0 && col < 3) {
+	        Cell cell = board.getCell(row, col);
+
+	        if (cell.isEmpty()) {
+	            cell.setMark(currentPlayer);
+
+	            if (checkWin()) {
+	                result = (currentPlayer == MarkType.X) ? ResultType.WIN : ResultType.LOSS;
+	            } else if (checkDraw()) {
+	                result = ResultType.DRAW;
+	            } else {
+	                switchPlayer();
+	            }
+
+	            return true;
+	        } else {
+	            // Cell is already marked, return false
+	            return false;
+	        }
+	    } else {
+	        // Invalid row or column, return false
+	        return false;
+	    }
+	}
+
+
+
+
+	private boolean checkWin() {
+
+		for (int row = 0; row < 3; row++) {
+			if (board.getCell(row, 0).getMark() == currentPlayer 
+					&& board.getCell(row, 1).getMark() == currentPlayer
+					&& board.getCell(row, 2).getMark() == currentPlayer)
+			{
+				return true;
+			}
+		}
+
+		for (int col = 0; col < 3; col++) {
+			if (board.getCell(0, col).getMark() == currentPlayer
+					&& board.getCell(1, col).getMark() == currentPlayer
+					&& board.getCell(2, col).getMark() == currentPlayer) {
+				return true;
+			}
+		}
+
+		if ((board.getCell(0, 0).getMark() == currentPlayer && board.getCell(1, 1).getMark() == currentPlayer
+				&& board.getCell(2, 2).getMark() == currentPlayer)
+				|| (board.getCell(0, 2).getMark() == currentPlayer
+				&& board.getCell(1, 1).getMark() == currentPlayer
+				&& board.getCell(2, 0).getMark() == currentPlayer)) {
+			return true;
+		}
+
+		return false;
+	}
+
+	private boolean checkDraw() {
+
+		for (int row = 0; row < 3; row++) {
+			for (int col = 0; col < 3; col++) {
+				if (board.getCell(row, col).isEmpty()) {
+					return false;
+				}
+			}
+		}
+		return true;
+	}
+
+	private void switchPlayer() {
+		if (currentPlayer == MarkType.X) {
+			currentPlayer = MarkType.O;
+		   }
+		else {
+			currentPlayer = MarkType.X;
+		}
+	}
+
+}

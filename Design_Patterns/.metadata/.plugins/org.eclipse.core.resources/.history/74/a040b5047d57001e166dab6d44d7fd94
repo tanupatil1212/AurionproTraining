@@ -1,0 +1,17 @@
+package com.aurionpro.model;
+
+public class TechLead implements IRole {
+
+	@Override
+	public String description() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public String responsibilty() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

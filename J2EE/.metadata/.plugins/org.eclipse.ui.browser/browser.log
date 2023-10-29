@@ -1,0 +1,37 @@
+
+Oct 14, 2023 20:47:26.41 NEW SESSION
+Oct 14, 2023 20:47:26.41 [18016:1564:1014/204726.400:ERROR:device_event_log_impl.cc(225)] [20:47:26.392] USB: usb_service_win.cc:415 Could not read device interface GUIDs: The system cannot find the file specified. (0x2)
+Oct 14, 2023 20:54:30.23 [18016:16036:1014/205430.237:ERROR:registration_request.cc(282)] Registration HTTP response code not OK: 404
+Oct 14, 2023 20:54:56.57 [18016:16036:1014/205456.569:ERROR:registration_request.cc(282)] Registration HTTP response code not OK: 404
+Oct 14, 2023 20:55:51.53 [18016:16036:1014/205551.535:ERROR:registration_request.cc(282)] Registration HTTP response code not OK: 404
+Oct 14, 2023 20:57:33.53 [18016:16036:1014/205733.530:ERROR:registration_request.cc(282)] Registration HTTP response code not OK: 404
+Oct 14, 2023 21:01:11.67 [18016:16036:1014/210111.671:ERROR:registration_request.cc(282)] Registration HTTP response code not OK: 404
+Oct 14, 2023 21:07:01.20 [18016:16036:1014/210701.198:ERROR:registration_request.cc(282)] Registration HTTP response code not OK: 404
+
+Oct 18, 2023 19:25:39.55 NEW SESSION
+Oct 18, 2023 19:25:39.55 [16504:14780:1018/192539.553:ERROR:device_event_log_impl.cc(225)] [19:25:39.546] USB: usb_service_win.cc:415 Could not read device interface GUIDs: The system cannot find the file specified. (0x2)
+
+Oct 18, 2023 21:16:11.57 NEW SESSION
+Oct 18, 2023 21:16:11.57 [8924:9280:1018/211611.572:ERROR:device_event_log_impl.cc(225)] [21:16:11.569] USB: usb_service_win.cc:415 Could not read device interface GUIDs: The system cannot find the file specified. (0x2)
+Oct 18, 2023 21:16:20.74 [8924:14328:1018/211619.050:ERROR:connection_factory_impl.cc(471)] ConnectionHandler failed with net error: -2
+
+Oct 19, 2023 21:21:03.40 NEW SESSION
+Oct 19, 2023 21:21:03.40 [11208:9504:1019/212103.396:ERROR:device_event_log_impl.cc(225)] [21:21:03.392] USB: usb_service_win.cc:415 Could not read device interface GUIDs: The system cannot find the file specified. (0x2)
+Oct 19, 2023 22:10:24.34 [11208:13640:1019/220945.471:ERROR:connection_factory_impl.cc(471)] ConnectionHandler failed with net error: -2
+Oct 19, 2023 23:28:21.47 [11208:13640:1019/232821.457:ERROR:connection_factory_impl.cc(471)] ConnectionHandler failed with net error: -2
+Oct 19, 2023 23:36:18.59 [11208:13640:1019/233618.598:ERROR:connection_factory_impl.cc(471)] ConnectionHandler failed with net error: -2
+
+Oct 22, 2023 01:00:10.47 NEW SESSION
+Oct 22, 2023 01:00:10.47 [16440:9092:1022/010010.463:ERROR:device_event_log_impl.cc(225)] [01:00:10.460] USB: usb_service_win.cc:415 Could not read device interface GUIDs: The system cannot find the file specified. (0x2)
+
+Oct 24, 2023 18:47:40.08 NEW SESSION
+Oct 24, 2023 18:47:40.08 [13092:19388:1024/184740.079:ERROR:device_event_log_impl.cc(225)] [18:47:40.073] USB: usb_service_win.cc:415 Could not read device interface GUIDs: The system cannot find the file specified. (0x2)
+Oct 24, 2023 19:49:24.70 [13092:6116:1024/194924.705:ERROR:registration_request.cc(290)] Registration HTTP response code not OK: 404
+Oct 24, 2023 19:49:47.44 [13092:6116:1024/194947.435:ERROR:registration_request.cc(290)] Registration HTTP response code not OK: 404
+Oct 24, 2023 19:50:43.98 [13092:6116:1024/195043.978:ERROR:registration_request.cc(290)] Registration HTTP response code not OK: 404
+Oct 24, 2023 19:52:37.16 [13092:6116:1024/195237.164:ERROR:registration_request.cc(290)] Registration HTTP response code not OK: 404
+Oct 24, 2023 19:55:29.98 [13092:6116:1024/195529.980:ERROR:registration_request.cc(290)] Registration HTTP response code not OK: 404
+Oct 24, 2023 20:03:00.54 [13092:6116:1024/200300.540:ERROR:registration_request.cc(290)] Registration HTTP response code not OK: 404
+
+Oct 26, 2023 21:09:57.42 NEW SESSION
+Oct 26, 2023 21:09:57.42 [10668:7136:1026/210957.413:ERROR:device_event_log_impl.cc(225)] [21:09:57.409] USB: usb_service_win.cc:415 Could not read device interface GUIDs: The system cannot find the file specified. (0x2)

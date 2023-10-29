@@ -1,0 +1,76 @@
+package com.aurionpro.model;
+
+import java.util.List;
+import java.util.Scanner;
+
+public class EmplyeeController {
+	private EmployeeManager employee;
+
+	  public  EmplyeeController() {
+		  employee = new EmployeeManager();
+	  }
+
+	  public void start() {
+	    displayMenu();
+	  }
+	  
+	  public void displayMenu() {
+		  Scanner scanner = new Scanner(System.in); 
+	        int choice; 
+	        do { 
+	            System.out.println("Welcome to the Movie Store!!!!!"); 
+	            System.out.println("1. Add Employee"); 
+	            System.out.println("2. Clear All Employee"); 
+	            System.out.println("3. Delete Employee");
+	            System.out.println("4. List Employee"); 
+	            System.out.println("5. Exit"); 
+	            System.out.print("Enter your choice here: "); 
+	            choice = scanner.nextInt(); 
+	            scanner.nextLine(); // Consume the newline character 
+	 
+	            int id;
+				switch (choice) { 
+	                case 1: 
+	                    Employee employee = setEmployeeDetails(); 
+	                    employee.addEmployee(employee); 
+	                    System.out.println("Employee added Successfully");
+	                    break; 
+	                case 2: 
+	                	employee.clearEmployee(); 
+	                    System.out.println("All Employee cleared."); 
+	                    break; 
+	            	case 3:
+	        			System.out.print("Enter Id: ");
+	        			id = scanner.nextInt();
+	        			employee.deleteEmployee(id);
+	        			employee.saveEmployee();
+	        			break;
+	                case 4: 
+	                    List<Employee> movies = employee.getEmployee(); 
+	                    if (movies.isEmpty()) { 
+	                        System.out.println("No Employee available."); 
+	                    } else { 
+	                        System.out.println("Employee:"); 
+	                        for (Employee m : employees) { 
+	                            System.out.println("List of Movies : " +m.getId() + ". " + m.getName() + " (" + m.getDesignation() + ") - " + m.getManagerID()); 
+	                        } 
+	                    } 
+	                    break; 
+	                case 5: 
+	                    System.out.println("Exiting..."); 
+	                    break; 
+	                default: 
+	                    System.out.println("Invalid choice. Please select a valid option."); 
+	            } 
+	        } while (choice != 5); 
+	    }
+
+	public void start1() {
+		// TODO Auto-generated method stub
+		
+	} 
+
+	
+	
+
+}

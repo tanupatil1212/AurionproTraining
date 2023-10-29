@@ -1,0 +1,96 @@
+package com.aurionpro.model;
+
+import java.io.Serializable;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.time.format.FormatStyle;
+
+public class Employee implements Serializable {
+	private int id;
+	private String name;
+	private String desgination;
+	private int MangagerID;
+	private LocalDate dob;
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getDesgination() {
+		return desgination;
+	}
+
+	public void setDesgination(String desgination) {
+		this.desgination = desgination;
+	}
+
+	public int getMangagerID() {
+		return MangagerID;
+	}
+
+	public void setMangagerID(int mangagerID) {
+		MangagerID = mangagerID;
+	}
+
+	public void setDOB(LocalDate dOB) {
+		this.dob = dOB;
+	}
+
+	public String formatDate(LocalDate date) {
+		return date.format(DateTimeFormatter.ofLocalizedDate(FormatStyle.FULL));
+	}
+
+	public int getIncrement() {
+		return increment;
+	}
+
+	public void setIncrement(int increment) {
+		this.increment = increment;
+	}
+
+	public int getCommision() {
+		return commision;
+	}
+
+	public void setCommision(int commision) {
+		this.commision = commision;
+	}
+
+	public int getDepartmentID() {
+		return departmentID;
+	}
+
+	public void setDepartmentID(int departmentID) {
+		this.departmentID = departmentID;
+	}
+
+	public Employee(int id, String name, String desgination, int mangagerID, LocalDate dob, int increment,
+			int commision, int departmentID) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.desgination = desgination;
+		MangagerID = mangagerID;
+		this.dob = dob;
+		this.increment = increment;
+		this.commision = commision;
+		this.departmentID = departmentID;
+	}
+
+	private int increment;
+	private int commision;
+	private int departmentID;
+
+}

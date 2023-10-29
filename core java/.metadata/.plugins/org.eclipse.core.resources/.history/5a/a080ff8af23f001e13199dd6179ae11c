@@ -1,0 +1,37 @@
+package com.aurionpro.test;
+
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
+import java.util.List;
+
+import com.aurionpro.model.Employee;
+
+public class EmployeeTest {
+
+    public static void main(String[] args) {
+        ArrayList<Employee> employeeList = new ArrayList<>();
+
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("d-MMM-yy");
+
+        employeeList.add(new Employee(7698, "BLAKE", "MANAGER", 7839, LocalDate.parse("1-MAY-81", formatter), 2850, 0, 30));
+        employeeList.add(new Employee(7369, "SMITH", "CLERK", 7902, LocalDate.parse("17-DEC-80", formatter), 800, 0, 20));
+        
+
+        int departmentCode = 10;
+
+        ArrayList<Employee> employeesByDepartmentId = new ArrayList<>();
+
+        for (Employee employee : employeeList) {
+            if (employee.getDepartmentID() == departmentCode) {
+                employeesByDepartmentId.add(employee);
+            }
+        }
+
+        System.out.println("Employees in Department " + departmentCode + ":");
+        for (Employee employee : employeesByDepartmentId) {
+            System.out.println("Employee ID: " + employee.getId() +
+                    ", Name: " + employee.getName());
+        }
+    }
+}

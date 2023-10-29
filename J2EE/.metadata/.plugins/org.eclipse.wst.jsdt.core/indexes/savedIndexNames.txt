@@ -1,0 +1,8 @@
+INDEX VERSION 1.4+D:\Aurionpro\J2EE\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+2594390507.index
+4237735322.index
+2054178144.index
+3201184805.index
+1037769405.index
+1618200814.index
+1332726720.index

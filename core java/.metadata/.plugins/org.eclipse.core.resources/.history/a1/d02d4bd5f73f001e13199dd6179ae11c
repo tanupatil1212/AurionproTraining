@@ -1,0 +1,291 @@
+package com.aurionpro.model;
+
+
+
+import java.io.BufferedReader;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.FileReader;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.Date;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Scanner;
+
+
+public class EmplpyeeManager {
+	
+
+		List<Employee> empDetails  = new ArrayList<Employee>();
+		static final String filepath = "D:\\Codes\\Eclipse-Wrokspace\\61-Tests\\data.txt";
+		
+		
+
+		public void loadData() {
+			loadEmpData();
+		}
+		
+		public void convertToEmpObj() {
+			try {
+				BufferedReader br = new BufferedReader(new FileReader("C:\\Users\\tanish.batham\\Downloads\\emp.txt"));
+				String line = br.readLine();
+				Double commission;
+				int managerID;
+				while (line != null) {
+					String[] arr = line.split(",");
+					if (arr.length == 8) {
+//						for (String string : arr) {
+//							System.out.println(string);
+//						}
+						int empID = Integer.parseInt(arr[0].trim().replaceAll("\"", ""));
+						String name = arr[1].trim().replace("\"", "");
+						String role = arr[2].trim().replace("\"", "");
+						if (arr[3].equalsIgnoreCase("null")) {
+							managerID = 0;
+						} else {
+							managerID = Integer.parseInt(arr[3].trim().replaceAll("\"", ""));
+						}
+						String date = arr[4].trim().replace("\"", "");
+						if (arr[6].equalsIgnoreCase("null")) {
+							commission = (double) 0;
+						} else {
+							commission = Double.parseDouble(arr[6].trim().replace("\"", ""));
+						}
+						double salary = Double.parseDouble(arr[5].trim().replace("\"", ""));
+						int departmentID = Integer.parseInt(arr[7].trim().replace("\"", ""));
+						empDetails.add(new Employee(empID, name, role, managerID, date, salary, commission, departmentID));
+						System.out.println(empDetails);
+//						
+					}
+					line = br.readLine();
+				
+			} 
+			}catch (IOException e) {
+			
+				e.printStackTrace();
+			}
+			
+		}
+		
+		public void serializeData() {
+			try {
+				FileOutputStream file = new FileOutputStream(filepath);
+				ObjectOutputStream out = new ObjectOutputStream(file);
+				out.writeObject(empDetails);
+				out.close();
+				file.close();
+
+//		            System.out.println("Object has been serialized");
+				loadEmpData();
+
+			}
+
+			catch (IOException ex) {
+				System.out.println("IOException is caught");
+			}
+		}
+
+		private void loadEmpData() {
+			// TODO Auto-generated method stub
+			try {
+
+				FileInputStream file = new FileInputStream(filepath);
+				ObjectInputStream in = new ObjectInputStream(file);
+
+				empDetails = (List<Employee>) in.readObject();
+
+				in.close();
+				file.close();
+			}
+
+			catch (IOException ex) {
+				System.out.println("IOException is caught");
+			}
+
+			catch (ClassNotFoundException ex) {
+				System.out.println("ClassNotFoundException" + " is caught");
+			}
+		}
+		
+		public void getAllEmp() {
+			
+			loadEmpData();
+			for (Employee employee : empDetails) {
+				System.out.println(employee);
+			}
+		}
+		
+		public void getAllFromDepartment() {
+			loadEmpData();
+			System.out.println("Enter department id:");
+			Scanner userin = new Scanner(System.in);
+			int userinput = userin.nextInt();
+			for (Employee employee : empDetails) {
+				if(employee.getDepartmentID()==userinput) {
+					System.out.println(employee);
+				}
+			}
+		}
+		
+		public void countOfEmpInEachDepartment() {
+			int countOF30=0;
+			int countOF20=0;
+			int countOF10=0;
+			loadEmpData();
+			for (Employee employee : empDetails) {
+				if(employee.getDepartmentID()==30) {
+					countOF30++;
+				}
+				else if(employee.getDepartmentID()==20) {
+					countOF20++;
+				}
+				else if(employee.getDepartmentID()==10) {
+					countOF10++;
+				}
+			}
+			System.out.println("In department 30 there are "+countOF30+" in 20 "+countOF20+" and in 10 "+countOF10);
+		}
+		
+		public void addNewEmp() {
+			System.out.println("Enter Emp ID");
+			Scanner userin = new Scanner(System.in);
+			int empID = userin.nextInt();
+			userin.nextLine();
+			System.out.println("Enter name");
+			String name = userin.nextLine();
+			System.out.println("Enter role");
+			String role = userin.nextLine();
+			System.out.println("Enter manager ID");
+			int managerID = userin.nextInt();
+			userin.nextLine();
+			System.out.println("Enter doj");
+			String date = userin.nextLine();
+			System.out.println("Enter salary");
+			double salary = userin.nextDouble();
+//			userin.nextLine();
+			System.out.println("Enter Commission");
+			double commission = userin.nextDouble();
+			System.out.println("Enter department id");
+			int department = userin.nextInt();
+			
+			empDetails.add(new Employee(empID, name, role, managerID, date, salary, commission, department));
+			serializeData();
+			
+		}
+		
+		public void deleteEmp() {
+			loadEmpData();
+			Scanner userin = new Scanner(System.in);
+			System.out.println("Enter emp ID to delete");
+			int userinput = userin.nextInt();
+			for (int i = 0; i < empDetails.size(); i++) {
+				if(empDetails.get(i).getEmployeeID()==userinput) {
+					empDetails.remove(i);
+					System.out.println("Removed");
+				}
+				
+			}
+			serializeData();
+		}
+		
+		public void getManagerOfEmp() {
+			loadEmpData();
+			Employee temp = null;
+			System.out.println("Enter Employee ID to get manager info");
+			Scanner userin = new Scanner(System.in);
+			int userinput = userin.nextInt();
+			for (Employee employee : empDetails) {
+				if(employee.getEmployeeID()==userinput) {
+					temp = employee;
+				}
+			}
+			for (Employee employee : empDetails) {
+				if(employee.getEmployeeID()==temp.getManagerID()) {
+					System.out.println(employee);
+				}
+			}
+		}
+		
+		public void highestPiad() {
+			loadEmpData();
+			Employee employee = empDetails.stream()
+			.max(Comparator.comparingDouble(Employee::getSalary))
+			.get();
+			
+			System.out.println(employee);
+		}
+		
+		public void highestPaidForEachRole() {
+			loadEmpData();
+			
+			Employee employee = empDetails.stream()
+			.filter(emp -> emp.getRole().equalsIgnoreCase("'manager'"))
+			.max(Comparator.comparingDouble(Employee::getSalary))
+			.get();	
+			System.out.println("Rich peep in manager "+employee);
+			
+			Employee employee1=empDetails.stream()
+			.filter(emp -> emp.getRole().equalsIgnoreCase("'clerk'"))
+			.max(Comparator.comparingDouble(Employee::getSalary))
+			.get();	
+			System.out.println("Rich peep in clerk "+employee1);
+			
+			Employee employee2=empDetails.stream()
+			.filter(emp -> emp.getRole().equalsIgnoreCase("'analyst'"))
+			.max(Comparator.comparingDouble(Employee::getSalary))
+			.get();	
+			System.out.println("Rich peep in analyst "+employee2);
+			
+			Employee employee3=empDetails.stream()
+			.filter(emp -> emp.getRole().equalsIgnoreCase("'salesman'"))
+			.max(Comparator.comparingDouble(Employee::getSalary))
+			.get();	
+			System.out.println("Rich peep in salesman "+employee3);
+
+		}
+		
+		public void highestPaidForEachDepartment() {
+			loadEmpData();
+			Employee employee = empDetails.stream()
+					.filter(emp -> emp.getDepartmentID()==30)
+					.max(Comparator.comparingDouble(Employee::getSalary))
+					.get();	
+			System.out.println("Rich peep in department 30 "+employee);
+			
+			Employee employee2 = empDetails.stream()
+			.filter(emp -> emp.getDepartmentID()==20)
+			.max(Comparator.comparingDouble(Employee::getSalary))
+			.get();
+			System.out.println("Rich peep in department 20 "+employee2);
+			
+			Employee employee3 = empDetails.stream()
+			.filter(emp -> emp.getDepartmentID()==10)
+			.max(Comparator.comparingDouble(Employee::getSalary))
+			.get();	
+			System.out.println("Rich peep in department 10 "+employee3);		
+		}
+		
+		public void salesmanWithHighComm() {
+			loadEmpData();
+			Employee employee = empDetails.stream()
+			.filter(emp -> emp.getRole().equalsIgnoreCase("'salesman'"))
+			.max(Comparator.comparingDouble(Employee::getCommission))
+			.get();	
+			System.out.println("Highest Commission "+employee);	
+		}
+		
+		public void sumOfAllSalaries() {
+			loadEmpData();
+			double sal = empDetails.stream()
+			.mapToDouble(Employee::getSalary).sum();
+			System.out.println("Total salary of company is "+sal);
+		}
+	}
+
+
+}

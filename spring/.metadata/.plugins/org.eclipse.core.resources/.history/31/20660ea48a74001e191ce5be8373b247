@@ -1,0 +1,14 @@
+package com.aurionpro.exception;
+
+public class StudentNotFoundException {
+	
+	public StudentNotFoundException(String string) {
+		super();
+	}
+
+	public void printStackTrace() {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

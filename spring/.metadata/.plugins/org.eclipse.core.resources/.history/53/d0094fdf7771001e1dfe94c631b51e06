@@ -1,0 +1,13 @@
+package com.aurionpro.dao;
+
+import com.aurionpro.entity.Student;
+
+public interface StudentDao {
+
+	
+	public void saveStudent(Student student);
+
+	
+		public Student findStudentById(int id);
+	
+}

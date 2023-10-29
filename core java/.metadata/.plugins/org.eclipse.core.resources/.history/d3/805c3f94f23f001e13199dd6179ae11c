@@ -1,0 +1,45 @@
+package com.aurionpro.test;
+
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
+import java.util.List;
+
+import com.aurionpro.model.Employee;
+
+public class EmployeeTest {
+
+    public static void main(String[] args) {
+    
+            String fileName = "employee_data.txt";
+            List<Employee> employeeList = new ArrayList<>();
+
+            try (BufferedReader br = new BufferedReader(new FileReader(emp.txt))) {
+                String line;
+                SimpleDateFormat dateFormat = new SimpleDateFormat("d-MMM-yy");
+
+                while ((line = br.readLine()) != null) {
+                    String[] data = line.split(",");
+                    if (data.length >= 8) {
+                        int empId = Integer.parseInt(data[0]);
+                        String empName = data[1].replaceAll("'", "");
+                        String job = data[2].replaceAll("'", "");
+                        int managerId = Integer.parseInt(data[3]);
+                        Date hireDate = dateFormat.parse(data[4].replaceAll("'", ""));
+                        int salary = Integer.parseInt(data[5]);
+                        Integer commission = data[6].equalsIgnoreCase("NULL") ? null : Integer.parseInt(data[6]);
+                        int departmentId = Integer.parseInt(data[7]);
+                        employeeList.add(new Employee(empId, empName, job, managerId, hireDate, salary, commission, departmentId));
+                    }
+                }
+            } catch (IOException | ParseException e) {
+                e.printStackTrace();
+            }
+
+      
+        }
+    }

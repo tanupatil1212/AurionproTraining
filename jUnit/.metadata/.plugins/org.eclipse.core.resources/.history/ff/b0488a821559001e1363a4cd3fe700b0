@@ -1,0 +1,28 @@
+package com.aurionpro.model;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.Test;
+
+class FactTest {
+
+//	@Test
+//	void test() {
+//		fail("Not yet implemented");
+//	}
+	
+	Fact  util = new Fact();
+	
+	@Test
+	 public void testFactorial() {
+	        // Test cases for factorial
+	        assertEquals(1, util.calculateFactorial(0));  // 0! = 1
+	        assertEquals(1, util.calculateFactorial(1));  // 1! = 1
+	        assertEquals(2, util.calculateFactorial(2));  // 2! = 2
+	        assertEquals(6, util.calculateFactorial(3));  // 3! = 6
+	        assertEquals(24, util.calculateFactorial(4)); // 4! = 24
+	        assertEquals(120,util.calculateFactorial(5));// 5! = 120
+	       
+	    }
+
+}

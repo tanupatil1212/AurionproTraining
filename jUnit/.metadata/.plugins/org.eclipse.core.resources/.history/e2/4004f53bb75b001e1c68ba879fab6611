@@ -1,0 +1,65 @@
+package com.aurionpro.model;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.Test;
+
+class ResultAnalyzerTest {
+
+	@Test
+	void test() {
+		fail("Not yet implemented");
+	}
+	
+	private Board board;
+    private ResultAnalyzer resultAnalyzer;
+
+    @BeforeEach
+    public void setUp() {
+        // Initialize the board and ResultAnalyzer before each test
+        board = new Board();
+        resultAnalyzer = new ResultAnalyzer(board);
+    }
+
+    @Test
+    public void testInitialResult() {
+        // Ensure that the initial result is PROGRESS
+        assertEquals(ResultType.PROGRESS, resultAnalyzer.getResult());
+    }
+
+    @Test
+    public void testWinningCondition() {
+        // Simulate a winning condition on the board
+        board.getCell(0, 0).setMark(MarkType.X);
+        board.getCell(0, 1).setMark(MarkType.X);
+        board.getCell(0, 2).setMark(MarkType.X);
+
+        // Analyze the result
+        resultAnalyzer.analyzeResult();
+
+        // Check that the result is WIN for player X
+        assertEquals(ResultType.WIN, resultAnalyzer.getResult());
+    }
+
+    @Test
+    public void testDrawCondition() {
+        // Simulate a draw condition on the board
+        board.getCell(0, 0).setMark(MarkType.X);
+        board.getCell(0, 1).setMark(MarkType.O);
+        board.getCell(0, 2).setMark(MarkType.X);
+        board.getCell(1, 0).setMark(MarkType.X);
+        board.getCell(1, 1).setMark(MarkType.O);
+        board.getCell(1, 2).setMark(MarkType.O);
+        board.getCell(2, 0).setMark(MarkType.O);
+        board.getCell(2, 1).setMark(MarkType.X);
+        board.getCell(2, 2).setMark(MarkType.X);
+
+        // Analyze the result
+        resultAnalyzer.analyzeResult();
+
+        // Check that the result is DRAW
+        assertEquals(ResultType.DRAW, resultAnalyzer.getResult());
+    }
+
+
+}

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="com.aurionpro.model.Singleton"/>
+<fullyQualifiedTypeName name="com.aurionpro.model.CarType"/>
+<fullyQualifiedTypeName name="com.aurionpro.model.CarFactory"/>
+<fullyQualifiedTypeName name="com.aurionpro.model.ICars"/>
+<fullyQualifiedTypeName name="com.aurionpro.model.MarutiFactory"/>
+<fullyQualifiedTypeName name="com.aurionpro.model.ICarFactory"/>
+<fullyQualifiedTypeName name="com.aurionpro.model.MahindraFactory"/>
+<fullyQualifiedTypeName name="com.aurionpro.model.LaptopBuilder"/>
+<fullyQualifiedTypeName name="com.aurionpro.model.IGadget"/>
+<fullyQualifiedTypeName name="com.aurionpro.model.Laptop"/>
+<fullyQualifiedTypeName name="com.aurionpro.model.TataFactory"/>
+<fullyQualifiedTypeName name="com.aurionpro.model.ShoppingCart"/>
+<fullyQualifiedTypeName name="com.aurionpro.model.Biscuit"/>
+<fullyQualifiedTypeName name="com.aurionpro.model.HatAdapter"/>
+<fullyQualifiedTypeName name="java.util.stream.Collectors"/>
+<fullyQualifiedTypeName name="com.aurionpro.model.IMenu"/>
+<fullyQualifiedTypeName name="com.aurionpro.model.IHotel"/>
+<fullyQualifiedTypeName name="com.aurionpro.model.IndianMenu"/>
+<fullyQualifiedTypeName name="com.aurionpro.model.CarInspection"/>
+<fullyQualifiedTypeName name="com.aurionpro.model.ICarService"/>
+<fullyQualifiedTypeName name="com.aurionpro.model.OilChange"/>
+<fullyQualifiedTypeName name="com.aurionpro.model.StandardHat"/>
+<fullyQualifiedTypeName name="com.aurionpro.model.GoldenHat"/>
+<fullyQualifiedTypeName name="com.aurionpro.model.IHat"/>
+<fullyQualifiedTypeName name="com.aurionpro.model.Account"/>
+<fullyQualifiedTypeName name="com.aurionpro.model.SmsNotifier"/>
+<fullyQualifiedTypeName name="com.aurionpro.model.InsufficientBalanceException"/>
+<fullyQualifiedTypeName name="com.aurionpro.model.Employee"/>
+<fullyQualifiedTypeName name="com.aurionpro.model.Consultant"/>
+<fullyQualifiedTypeName name="com.aurionpro.model.SeniorConsultant"/>
+<fullyQualifiedTypeName name="com.aurionpro.model.TechLead"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="com.aurionpro.model.CircleShapeFactory"/>
+<fullyQualifiedTypeName name="com.aurionpro.model.IShape"/>
+<fullyQualifiedTypeName name="java.util.HashMap"/>
+<fullyQualifiedTypeName name="com.aurionpro.model.Shape"/>
+<fullyQualifiedTypeName name="com.aurionpro.model.Circle"/>
+<fullyQualifiedTypeName name="com.aurionpro.model.Square"/>
+<fullyQualifiedTypeName name="com.aurionpro.model.BlueColor"/>
+<fullyQualifiedTypeName name="com.aurionpro.model.RedColor"/>
+<fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="java.util.Arrays"/>
+</qualifiedTypeNameHistroy>

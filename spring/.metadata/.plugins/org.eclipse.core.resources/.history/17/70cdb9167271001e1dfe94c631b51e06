@@ -1,0 +1,34 @@
+package com.aurionpro;
+
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+import com.aurionpro.dao.StudentDao;
+import com.aurionpro.entity.Student;
+
+@SpringBootApplication
+public class Application implements CommandLineRunner{
+	private StudentDao studentDao;
+
+	public Application(StudentDao studentDao) {
+		super();
+		this.studentDao = studentDao;
+	}
+
+	public static void main(String[] args) {
+		SpringApplication.run(Application.class, args);
+	}
+
+	@Override
+	public void run(String... args) throws Exception {
+		System.out.println("Hello world");
+		
+	}
+	
+	private void addNewStudent() {
+		Student student = new Student("tanuja","patil","tanuja@gmail.com");
+		System.out.println("student saved Successfully");
+	}
+
+}

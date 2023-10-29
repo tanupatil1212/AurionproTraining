@@ -1,0 +1,24 @@
+package com.aurionpro.model;
+
+public class StringUtil {
+
+	public String truncateInFirst2Positions(String str) {
+		if (str.length() >= 2) {
+			return str.substring(2);
+		} else {
+			return str;
+		}
+
+	}
+
+	public boolean areFirstAndLastTwoCharactersTheSame(String str) {
+		  if(str.length()>=2) {
+		   String firstTwo = str.substring(0,2);
+		   String lastTwo = str.substring(str.length()-2);
+		   return firstTwo.equals(lastTwo);
+		  }else {
+		   return false;
+		   
+		  }
+	}
+}
